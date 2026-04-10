@@ -15,7 +15,7 @@ const About: React.FC = () => {
       <section className="section manager-presentation">
         <div className="container manager-grid">
           <div className="manager-image">
-            <img src={managerImg} alt="La Responsable de GY Maison Couture" />
+            <img src={managerImg} alt="La Responsable de GY Maison Couture" loading="lazy" />
           </div>
           <div className="manager-content">
             <span className="subtitle">Mot de la Responsable</span>

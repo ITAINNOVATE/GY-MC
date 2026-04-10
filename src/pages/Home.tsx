@@ -48,7 +48,7 @@ const Home: React.FC = () => {
           </div>
           <div className="philosophy-image">
             <div className="image-wrapper">
-              <img src={studioImg} alt="Studio GY Maison Couture" />
+              <img src={studioImg} alt="Studio GY Maison Couture" loading="lazy" />
             </div>
           </div>
         </div>
