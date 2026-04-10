@@ -8,15 +8,18 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { addToCart } = useCart();
+  const { addToCart, setSelectedProduct } = useCart();
 
   return (
     <div className="product-card">
       <div className="product-image">
         <img src={product.image} alt={product.name} />
         <div className="product-actions">
-          <button className="btn btn-primary" onClick={() => addToCart(product)}>
-            Ajouter au panier
+          <button className="btn-small btn-secondary-light" onClick={() => setSelectedProduct(product)}>
+            Détails
+          </button>
+          <button className="btn-small btn-primary" onClick={() => addToCart(product)}>
+            Commander
           </button>
         </div>
       </div>

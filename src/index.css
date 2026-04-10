@@ -155,4 +155,9 @@ img {
   height: 24px;
   flex-shrink: 0;
 }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
 

@@ -22,6 +22,8 @@ interface CartContextType {
   total: number;
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
+  selectedProduct: Product | null;
+  setSelectedProduct: (product: Product | null) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -29,6 +31,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const addToCart = (product: Product) => {
     setCart(prev => {
@@ -63,7 +66,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   return (
     <CartContext.Provider value={{ 
-      cart, addToCart, removeFromCart, updateQuantity, clearCart, total, isOpen, setIsOpen 
+      cart, addToCart, removeFromCart, updateQuantity, clearCart, total, isOpen, setIsOpen,
+      selectedProduct, setSelectedProduct
     }}>
       {children}
     </CartContext.Provider>
