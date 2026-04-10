@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import type { Product } from './CartContext';
@@ -19,6 +20,8 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const fetchProducts = async () => {
     try {
       setLoading(true);
+      setError(null);
+      
       const { data, error: supabaseError } = await supabase
         .from('products')
         .select('*')
@@ -26,20 +29,19 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
       if (supabaseError) throw supabaseError;
 
-      // Map Supabase fields to our Product interface if names differ
       const mappedProducts: Product[] = (data || []).map(p => ({
         id: p.id,
         name: p.name,
-        price: p.price,
-        description: p.description,
-        image: p.image_url, // Map image_url to image
-        category: p.category,
-        collection: p.collection
+        price: Number(p.price),
+        description: p.description || '',
+        image: p.image_url || '',
+        category: p.category || 'Haute Couture',
+        collection: p.collection || 'Deuxième Collection'
       }));
 
       setProducts(mappedProducts);
     } catch (err: any) {
-      setError(err.message);
+      setError(err.message || 'Impossible de charger les produits');
       console.error('Error fetching products:', err);
     } finally {
       setLoading(false);

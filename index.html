@@ -10,6 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GY Maison Couture | Haute Couture Béninoise</title>
     <meta name="description" content="Découvrez l'excellence de la haute couture béninoise avec GY Maison Couture. Des créations uniques alliant tradition et modernité." />
+    <script>
+      window.addEventListener('error', function(event) {
+        document.body.innerHTML += '<div style="color:red; background:#000; padding:20px; z-index:9999; position:absolute; top:0;"><h1>Global Error:</h1><pre>' + event.error?.stack + '</pre></div>';
+      });
+      window.addEventListener('unhandledrejection', function(event) {
+        document.body.innerHTML += '<div style="color:red; background:#000; padding:20px; z-index:9999; position:absolute; top:0;"><h1>Unhandled Rejection:</h1><pre>' + event.reason + '</pre></div>';
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
