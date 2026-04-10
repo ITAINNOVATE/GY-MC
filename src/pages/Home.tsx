@@ -1,12 +1,15 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import ProductCard from '../components/ProductCard';
-import { products } from '../utils/products';
+import { useProducts } from '../context/ProductContext';
 import studioImg from '../assets/studio.png';
 import './Home.css';
 
 const Home: React.FC = () => {
+  const { products, loading } = useProducts();
   const featuredProducts = products.slice(0, 3);
+
+  if (loading) return null;
 
   return (
     <main className="home-page">

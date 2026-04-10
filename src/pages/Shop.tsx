@@ -1,15 +1,28 @@
 import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
-import { products } from '../utils/products';
+import { useProducts } from '../context/ProductContext';
 import './Shop.css';
 
 const Shop: React.FC = () => {
+  const { products, loading, error } = useProducts();
   const [activeCollection, setActiveCollection] = useState('Deuxième Collection');
   const collections = ['Toutes', 'Première Collection', 'Deuxième Collection'];
 
   const filteredProducts = activeCollection === 'Toutes' 
     ? products 
     : products.filter(p => p.collection === activeCollection);
+
+  if (loading) return (
+    <div className="container" style={{ padding: '100px 20px', textAlign: 'center' }}>
+      <p>Chargement des collections...</p>
+    </div>
+  );
+
+  if (error) return (
+    <div className="container" style={{ padding: '100px 20px', textAlign: 'center' }}>
+      <p>Une erreur est survenue lors du chargement des produits.</p>
+    </div>
+  );
 
   return (
     <main className="shop-page">

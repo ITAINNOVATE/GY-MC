@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
+import { ProductProvider } from './context/ProductContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
@@ -34,20 +35,22 @@ const App: React.FC = () => {
   return (
     <Router>
       <CartProvider>
-        <div className="app">
-          <Navbar />
-          <CartDrawer />
-          <ProductModal />
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/shop" element={<Shop />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </Suspense>
-          <Footer />
-        </div>
+        <ProductProvider>
+          <div className="app">
+            <Navbar />
+            <CartDrawer />
+            <ProductModal />
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </Suspense>
+            <Footer />
+          </div>
+        </ProductProvider>
       </CartProvider>
     </Router>
   );
