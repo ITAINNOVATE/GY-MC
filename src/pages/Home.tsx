@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import ProductCard from '../components/ProductCard';
 import { products } from '../utils/products';
+import studioImg from '../assets/studio.png';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -47,7 +48,7 @@ const Home: React.FC = () => {
           </div>
           <div className="philosophy-image">
             <div className="image-wrapper">
-              <img src="/src/assets/studio.png" alt="Studio GY Maison Couture" />
+              <img src={studioImg} alt="Studio GY Maison Couture" />
             </div>
           </div>
         </div>
