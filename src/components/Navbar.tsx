@@ -5,6 +5,7 @@ import './Navbar.css';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { cart, setIsOpen } = useCart();
   const location = useLocation();
   const isHome = location.pathname === '/';
@@ -19,14 +20,19 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menu on navigation
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled glass-effect' : ''} ${!isHome ? 'not-home' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled glass-effect' : ''} ${!isHome ? 'not-home' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container navbar-container">
         <a href="/" className="logo">
           GY <span className="logo-accent">MAISON COUTURE</span>
         </a>
         
-        <ul className="nav-links">
+        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <li><a href="/">Accueil</a></li>
           <li><a href="/shop">Boutique</a></li>
           <li><a href="/about">À Propos</a></li>
@@ -35,12 +41,20 @@ const Navbar: React.FC = () => {
 
         <div className="nav-actions">
           <button className="cart-trigger" onClick={() => setIsOpen(true)}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
             {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+          </button>
+
+          <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+            <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </button>
         </div>
       </div>

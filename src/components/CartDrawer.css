@@ -139,3 +139,21 @@
   margin-bottom: 2rem;
   color: var(--text-muted);
 }
+@media (max-width: 480px) {
+  .cart-drawer {
+    max-width: 100%;
+  }
+  
+  .cart-header, .cart-items, .cart-footer {
+    padding: 1.5rem;
+  }
+  
+  .cart-item {
+    gap: 1rem;
+  }
+  
+  .item-image img {
+    width: 60px;
+    height: 80px;
+  }
+}
