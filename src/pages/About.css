@@ -1,0 +1,78 @@
+.about-page {
+  padding-top: 80px;
+}
+
+.about-hero {
+  background-color: var(--secondary);
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.manager-presentation {
+  background-color: white;
+}
+
+.manager-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.manager-image img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+
+.manager-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.quote {
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.manager-content p {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.large-text {
+  font-size: 1.25rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  text-align: center;
+}
+
+.value-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 992px) {
+  .manager-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}

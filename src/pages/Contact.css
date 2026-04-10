@@ -1,0 +1,65 @@
+.contact-page {
+  padding-top: 80px;
+}
+
+.contact-hero {
+  background-color: var(--secondary);
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 6rem;
+}
+
+.contact-method {
+  margin-bottom: 3rem;
+}
+
+.contact-method p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.fb-link {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.contact-form-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 1.2rem;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  background-color: white;
+}
+
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}

@@ -1,0 +1,76 @@
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.8rem;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.accent-line {
+  width: 60px;
+  height: 2px;
+  background-color: var(--primary);
+  margin: 0 auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.view-all {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.philosophy-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.philosophy-content p {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.philosophy-content .btn {
+  margin-top: 2rem;
+}
+
+.image-wrapper {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
