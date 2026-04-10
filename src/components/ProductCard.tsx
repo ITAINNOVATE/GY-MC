@@ -13,7 +13,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className="product-card">
       <div className="product-image">
-        <img src={product.image} alt={product.name} loading="lazy" />
+        <img src={product.image} alt={product.name} />
         <div className="product-actions">
           <button className="btn-small btn-secondary-light" onClick={() => setSelectedProduct(product)}>
             Détails
