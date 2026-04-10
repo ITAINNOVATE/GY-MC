@@ -1,14 +1,14 @@
 import type { Product } from '../context/CartContext';
 
 // Collection 1
-import item1_1 from '../assets/products/item_1.png';
-import item1_2 from '../assets/products/item_2.png';
-import item1_3 from '../assets/products/item_3.png';
-import item1_4 from '../assets/products/item_4.png';
-import item1_5 from '../assets/products/item_5.png';
-import item1_6 from '../assets/products/item_6.png';
-import item1_7 from '../assets/products/item_7.png';
-import item1_8 from '../assets/products/item_8.png';
+import item1_1 from '../assets/collections/collection1/coll1_1.jpg';
+import item1_2 from '../assets/collections/collection1/coll1_2.jpg';
+import item1_3 from '../assets/collections/collection1/coll1_3.jpg';
+import item1_4 from '../assets/collections/collection1/coll1_4.jpg';
+import item1_5 from '../assets/collections/collection1/coll1_5.jpg';
+import item1_6 from '../assets/collections/collection1/coll1_6.jpg';
+import item1_7 from '../assets/collections/collection1/coll1_7.jpg';
+import item1_8 from '../assets/collections/collection1/coll1_8.jpg';
 
 // Collection 2 Imports (1-42)
 import c2_01 from '../assets/collections/collection2/item2_01.jpg';
