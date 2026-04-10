@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProductCard from '../components/ProductCard';
 import { products } from '../utils/products';
 import './Shop.css';
 
 const Shop: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState('Tous');
-  const categories = ['Tous', 'Couture', 'Traditional', 'Modern'];
-
-  const filteredProducts = activeCategory === 'Tous' 
-    ? products 
-    : products.filter(p => p.category === activeCategory);
+  const filteredProducts = products;
 
   return (
     <main className="shop-page">
@@ -22,16 +17,10 @@ const Shop: React.FC = () => {
 
       <section className="section shop-section">
         <div className="container">
-          <div className="shop-filters">
-            {categories.map(cat => (
-              <button 
-                key={cat} 
-                className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
-                onClick={() => setActiveCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
+          <div className="section-header">
+            <span className="subtitle">Première Collection</span>
+            <h2>L'Éveil des Sens</h2>
+            <div className="accent-line"></div>
           </div>
 
           <div className="products-grid">

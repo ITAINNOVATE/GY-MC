@@ -6,7 +6,8 @@ export interface Product {
   price: number;
   description: string;
   image: string;
-  category: 'Couture' | 'Modern' | 'Traditional';
+  category: string;
+  collection: string;
 }
 
 interface CartItem extends Product {
