@@ -41,6 +41,18 @@
   color: white;
 }
 
+.footer .tt-link:hover {
+  color: #ff0050;
+}
+
+.social-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
 .footer-bottom {
   border-top: 1px solid #333;
   padding-top: 2rem;
