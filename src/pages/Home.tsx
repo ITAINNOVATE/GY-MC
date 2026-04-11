@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import ProductCard from '../components/ProductCard';
 import { useProducts } from '../context/ProductContext';
-import studioImg from '../assets/studio.png';
+const essenceImg = 'https://xncrrgxnyqgekmfhipen.supabase.co/storage/v1/object/public/products/c2/item2_25.jpg';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
           </div>
           <div className="philosophy-image">
             <div className="image-wrapper">
-              <img src={studioImg} alt="Studio GY Maison Couture" loading="lazy" />
+              <img src={essenceImg} alt="Studio GY Maison Couture" />
             </div>
           </div>
         </div>
