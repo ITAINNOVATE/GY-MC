@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
-import managerImg from '../assets/manager.png';
+
+const managerImg = 'https://xncrrgxnyqgekmfhipen.supabase.co/storage/v1/object/public/products/c2/item2_30.jpg';
 
 const About: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const About: React.FC = () => {
       <section className="section manager-presentation">
         <div className="container manager-grid">
           <div className="manager-image">
-            <img src={managerImg} alt="La Responsable de GY Maison Couture" loading="lazy" />
+            <img src={managerImg} alt="La Responsable de GY Maison Couture" />
           </div>
           <div className="manager-content">
             <span className="subtitle">Mot de la Responsable</span>
