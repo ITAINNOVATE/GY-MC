@@ -21,15 +21,27 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
     try {
       setLoading(true);
       setError(null);
+
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+      if (!supabaseUrl || supabaseUrl === 'https://placeholder.supabase.co') {
+        throw new Error('Configuration Supabase manquante (Vérifiez les variables d\'environnement).');
+      }
       
-      const { data, error: supabaseError } = await supabase
+      const fetchPromise = supabase
         .from('products')
         .select('*')
         .order('created_at', { ascending: false });
 
+      // Timeout de 10 secondes pour éviter le chargement infini
+      const timeoutPromise = new Promise<any>((_, reject) => 
+        setTimeout(() => reject(new Error('Délai d\'attente dépassé pour la récupération des produits')), 10000)
+      );
+
+      const { data, error: supabaseError } = await Promise.race([fetchPromise, timeoutPromise]);
+
       if (supabaseError) throw supabaseError;
 
-      const mappedProducts: Product[] = (data || []).map(p => ({
+      const mappedProducts: Product[] = (data || []).map((p: any) => ({
         id: p.id,
         name: p.name,
         price: Number(p.price),
@@ -42,7 +54,6 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
       setProducts(mappedProducts);
     } catch (err: any) {
       setError(err.message || 'Impossible de charger les produits');
-      console.error('Error fetching products:', err);
     } finally {
       setLoading(false);
     }
