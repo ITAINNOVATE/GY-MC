@@ -9,6 +9,7 @@ import ProductModal from './components/ProductModal';
 
 // Lazy loading pages for better performance
 const Home = lazy(() => import('./pages/Home'));
+const Collections = lazy(() => import('./pages/Collections'));
 const Shop = lazy(() => import('./pages/Shop'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -43,6 +44,7 @@ const App: React.FC = () => {
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/collections" element={<Collections />} />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />

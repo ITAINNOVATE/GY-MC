@@ -1,25 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProductCard from '../components/ProductCard';
 import { useProducts } from '../context/ProductContext';
 import './Shop.css';
 
 const Shop: React.FC = () => {
   const { products, loading, error } = useProducts();
-  const [activeCollection, setActiveCollection] = useState('Deuxième Collection');
-  const collections = ['Toutes', 'Première Collection', 'Deuxième Collection'];
 
-  const filteredProducts = activeCollection === 'Toutes' 
-    ? products 
-    : products.filter(p => p.collection === activeCollection);
+  // For now, Shop shows all products as per user directive 
+  // until "pièces en vente" logic is confirmed.
+  const shopProducts = products;
 
   if (loading) return (
-    <div className="container" style={{ padding: '100px 20px', textAlign: 'center' }}>
-      <p>Chargement des collections...</p>
+    <div className="container" style={{ padding: '150px 20px', textAlign: 'center' }}>
+      <p className="loading-text">Chargement de la boutique...</p>
     </div>
   );
 
   if (error) return (
-    <div className="container" style={{ padding: '100px 20px', textAlign: 'center' }}>
+    <div className="container" style={{ padding: '150px 20px', textAlign: 'center' }}>
       <p>Une erreur est survenue lors du chargement des produits.</p>
     </div>
   );
@@ -28,34 +26,22 @@ const Shop: React.FC = () => {
     <main className="shop-page">
       <section className="shop-hero">
         <div className="container">
-          <span className="subtitle">Collections Exclusives</span>
+          <span className="subtitle">Prêt-à-Porter & Accessoires</span>
           <h1>La Boutique</h1>
         </div>
       </section>
 
       <section className="section shop-section">
         <div className="container">
-          <div className="shop-filters">
-            {collections.map(coll => (
-              <button 
-                key={coll} 
-                className={`filter-btn ${activeCollection === coll ? 'active' : ''}`}
-                onClick={() => setActiveCollection(coll)}
-              >
-                {coll}
-              </button>
-            ))}
-          </div>
-
-          <div className="products-grid">
-            {filteredProducts.map(product => (
+          <div className="products-grid fade-in">
+            {shopProducts.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
 
-          {filteredProducts.length === 0 && (
+          {shopProducts.length === 0 && (
             <div className="no-results">
-              <p>Aucun produit trouvé dans cette catégorie.</p>
+              <p>La boutique est actuellement vide. Nos nouvelles pièces arrivent bientôt.</p>
             </div>
           )}
         </div>

@@ -1,0 +1,60 @@
+.collections-page {
+  padding-top: 80px;
+}
+
+.shop-hero {
+  background-color: var(--secondary);
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.shop-filters {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.filter-btn {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.filter-btn:hover {
+  color: var(--secondary);
+}
+
+.filter-btn.active {
+  color: var(--secondary);
+  border-bottom-color: var(--primary);
+}
+
+.no-results {
+  text-align: center;
+  padding: 5rem 0;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .shop-hero {
+    padding: 4rem 0;
+  }
+  
+  .shop-filters {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
