@@ -1,9 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { supabase } from '../lib/supabase';
 import './CartDrawer.css';
 
 const CartDrawer: React.FC = () => {
   const { cart, removeFromCart, updateQuantity, total, isOpen, setIsOpen } = useCart();
+  const [loading, setLoading] = useState(false);
+
+  const handleCheckout = async () => {
+    if (cart.length === 0) return;
+    
+    setLoading(true);
+    try {
+      const email = prompt("Veuillez saisir votre email pour la confirmation de paiement :");
+      if (!email) {
+        setLoading(false);
+        return;
+      }
+
+      const { data, error } = await supabase.functions.invoke('payment-handler', {
+        body: { 
+          email, 
+          amount: total,
+          items: cart.map(item => ({ id: item.id, name: item.name, price: item.price, quantity: item.quantity }))
+        }
+      });
+
+      if (error) throw error;
+      if (data?.checkout_url) {
+        window.location.href = data.checkout_url;
+      } else {
+        throw new Error("Lien de paiement non généré");
+      }
+    } catch (err) {
+      console.error("Erreur de paiement:", err);
+      alert("Une erreur est survenue lors de l'initialisation du paiement. Veuillez réessayer.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -52,7 +87,13 @@ const CartDrawer: React.FC = () => {
               <span>Total</span>
               <span className="total-price">{total.toLocaleString()} F CFA</span>
             </div>
-            <button className="btn btn-primary checkout-btn">Passer la commande</button>
+            <button 
+              className="btn btn-primary checkout-btn" 
+              onClick={handleCheckout}
+              disabled={loading}
+            >
+              {loading ? 'Traitement...' : 'Payer maintenant'}
+            </button>
           </div>
         )}
       </div>

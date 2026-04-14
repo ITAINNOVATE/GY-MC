@@ -9,7 +9,7 @@ interface ProductCardProps {
   buttonText?: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = true, buttonText = "Commande Spéciale" }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = true, buttonText = "Commander" }) => {
   const { addToCart, setSelectedProduct } = useCart();
 
   return (

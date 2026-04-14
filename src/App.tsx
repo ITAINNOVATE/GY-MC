@@ -13,6 +13,7 @@ const Collections = lazy(() => import('./pages/Collections'));
 const Shop = lazy(() => import('./pages/Shop'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
+const PaymentSuccess = lazy(() => import('./pages/PaymentSuccess'));
 
 // Loading component
 const PageLoader = () => (
@@ -48,6 +49,7 @@ const App: React.FC = () => {
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/payment-success" element={<PaymentSuccess />} />
               </Routes>
             </Suspense>
             <Footer />
