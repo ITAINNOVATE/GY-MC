@@ -11,7 +11,6 @@ const PaymentSuccess: React.FC = () => {
   const [orderDetails, setOrderDetails] = useState<any>(null);
 
   const tx_ref = searchParams.get('tx_ref');
-  const transaction_id = searchParams.get('transaction_id'); // From Flutterwave real redirect
 
   useEffect(() => {
     const verifyPayment = async () => {
