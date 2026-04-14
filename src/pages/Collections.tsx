@@ -49,7 +49,7 @@ const Collections: React.FC = () => {
 
           <div className="products-grid fade-in">
             {filteredProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} showPrice={false} />
             ))}
           </div>
 

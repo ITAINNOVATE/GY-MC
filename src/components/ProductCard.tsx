@@ -5,9 +5,10 @@ import './ProductCard.css';
 
 interface ProductCardProps {
   product: Product;
+  showPrice?: boolean;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = true }) => {
   const { addToCart, setSelectedProduct } = useCart();
 
   return (
@@ -19,14 +20,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             Détails
           </button>
           <button className="btn-small btn-primary" onClick={() => addToCart(product)}>
-            Commander
+            Commande Spéciale
           </button>
         </div>
       </div>
       <div className="product-info">
         <span className="category">{product.category}</span>
         <h3>{product.name}</h3>
-        <p className="price">{product.price.toLocaleString()} F CFA</p>
+        {showPrice && <p className="price">{product.price.toLocaleString()} F CFA</p>}
       </div>
     </div>
   );

@@ -205,9 +205,17 @@ img {
   margin-bottom: 1.5rem;
 }
 
-.accent-line {
-  width: 60px;
-  height: 2px;
-  background-color: var(--primary);
-  margin: 0 auto;
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+  }
 }
