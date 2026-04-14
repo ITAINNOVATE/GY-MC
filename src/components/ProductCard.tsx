@@ -6,9 +6,10 @@ import './ProductCard.css';
 interface ProductCardProps {
   product: Product;
   showPrice?: boolean;
+  buttonText?: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = true }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = true, buttonText = "Commande Spéciale" }) => {
   const { addToCart, setSelectedProduct } = useCart();
 
   return (
@@ -20,7 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = true }) 
             Détails
           </button>
           <button className="btn-small btn-primary" onClick={() => addToCart(product)}>
-            Commande Spéciale
+            {buttonText}
           </button>
         </div>
       </div>
