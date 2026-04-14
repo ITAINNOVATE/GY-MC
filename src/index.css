@@ -1,20 +1,22 @@
 /* Variable definition */
 :root {
-  --primary: #C5A059;
-  --primary-dark: #A68545;
-  --secondary: #1A1A1A;
-  --background: #FFFFFF;
-  --surface: #F9F9FB;
-  --text-main: #1A1A1A;
-  --text-muted: #666666;
-  --border: #EEEEEE;
-  --glass: rgba(255, 255, 255, 0.8);
+  --primary: hsl(40, 50%, 56%); /* Luxurious Gold */
+  --primary-light: hsl(40, 50%, 75%);
+  --primary-dark: hsl(40, 50%, 35%);
+  --secondary: hsl(0, 0%, 10%); /* Deep Charcoal */
+  --background: hsl(0, 0%, 100%);
+  --surface: hsl(240, 10%, 98%);
+  --text-main: hsl(0, 0%, 15%);
+  --text-muted: hsl(0, 0%, 45%);
+  --border: hsl(0, 0%, 93%);
+  --glass: rgba(255, 255, 255, 0.75);
+  --gold-gradient: linear-gradient(135deg, #C5A059 0%, #E8D5B5 50%, #A68545 100%);
   
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
   
-  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -41,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
   color: inherit;
-  transition: var(--transition);
+  transition: var(--transition-smooth);
 }
 
 button {
@@ -50,7 +52,7 @@ button {
   outline: none;
   background: none;
   font-family: var(--font-body);
-  transition: var(--transition);
+  transition: var(--transition-smooth);
 }
 
 ul {
@@ -84,15 +86,17 @@ img {
 }
 
 .btn {
-  padding: 1rem 2.5rem;
-  border-radius: 2px;
+  padding: 1.1rem 2.8rem;
+  border-radius: 0;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
   display: inline-block;
   position: relative;
   overflow: hidden;
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
 }
 
 .btn-primary {
@@ -101,8 +105,10 @@ img {
 }
 
 .btn-primary:hover {
-  background-color: var(--primary);
-  transform: translateY(-2px);
+  background-color: transparent;
+  color: var(--secondary);
+  border-color: var(--secondary);
+  transform: translateY(-3px);
 }
 
 .btn-secondary {
@@ -113,16 +119,26 @@ img {
 .btn-secondary:hover {
   background-color: var(--secondary);
   color: white;
+  transform: translateY(-3px);
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 .fade-in {
-  animation: fadeIn 1s ease-out forwards;
+  animation: fadeIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.scale-in {
+  animation: scaleIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 /* Glassmorphism */

@@ -1,12 +1,23 @@
 .hero {
   height: 100vh;
-  background-image: url('https://xncrrgxnyqgekmfhipen.supabase.co/storage/v1/object/public/products/c2/item2_01.jpg');
-  background-size: cover;
-  background-position: center;
   position: relative;
   display: flex;
   align-items: center;
   color: white;
+  overflow: hidden;
+  background-color: var(--secondary);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://xncrrgxnyqgekmfhipen.supabase.co/storage/v1/object/public/products/c2/item2_01.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
 }
 
 .hero-overlay {
@@ -15,7 +26,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%);
+  background: linear-gradient(
+    to bottom, 
+    rgba(0,0,0,0.4) 0%, 
+    rgba(0,0,0,0.6) 100%
+  );
+  z-index: 2;
 }
 
 .hero-container {
@@ -37,9 +53,11 @@
 }
 
 .hero h1 {
-  font-size: 4.5rem;
-  line-height: 1.1;
-  margin-bottom: 2rem;
+  font-size: 5.5rem;
+  line-height: 1;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .hero p {
@@ -55,13 +73,15 @@
 }
 
 .hero .btn-secondary {
-  border-color: white;
+  border-color: rgba(255, 255, 255, 0.5);
   color: white;
+  background-color: transparent;
 }
 
 .hero .btn-secondary:hover {
   background-color: white;
   color: var(--secondary);
+  border-color: white;
 }
 
 @media (max-width: 768px) {

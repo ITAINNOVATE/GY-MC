@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="footer-brand">
           <h2 className="logo">GY <span className="logo-accent">MAISON COUTURE</span></h2>
           <p className="brand-story">
-            L'excellence de la haute couture béninoise. Des créations uniques alliant tradition et modernité.
+            L'excellence de la haute couture. Des créations uniques alliant tradition et modernité.
           </p>
         </div>
         

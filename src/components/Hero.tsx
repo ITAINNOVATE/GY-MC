@@ -4,10 +4,11 @@ import './Hero.css';
 const Hero: React.FC = () => {
   return (
     <section className="hero">
+      <div className="hero-background scale-in"></div>
       <div className="hero-overlay"></div>
       <div className="container hero-container">
         <div className="hero-content fade-in">
-          <span className="hero-subtitle">Haute Couture Béninoise</span>
+          <span className="hero-subtitle">Haute Couture</span>
           <h1>L'Élégance <br /> Redéfinie</h1>
           <p>
             Découvrez des créations uniques, conçues avec passion et précision 

@@ -9,36 +9,64 @@
 
 .philosophy-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 8rem;
   align-items: center;
 }
 
+.philosophy-content {
+  padding-right: 2rem;
+}
+
 .philosophy-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
 }
 
 .philosophy-content p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 300;
 }
 
 .philosophy-content .btn {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .image-wrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border);
+}
+
+.image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .image-wrapper img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  aspect-ratio: 4/5;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.05);
 }
 
 @media (max-width: 992px) {
