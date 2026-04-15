@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { cart, setIsOpen } = useCart();
   const location = useLocation();
   const isHome = location.pathname === '/';
 
-  const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+
 
   useEffect(() => {
     const handleScroll = () => {

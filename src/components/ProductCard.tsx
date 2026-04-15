@@ -10,7 +10,7 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = false, buttonText = "Détails" }) => {
-  const { addToCart, setSelectedProduct } = useCart();
+  const { setSelectedProduct } = useCart();
 
   return (
     <div className="product-card">
