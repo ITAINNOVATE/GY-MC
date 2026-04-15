@@ -267,3 +267,148 @@
   border-radius: 8px;
   line-height: 1.6;
 }
+
+/* ─── Payment Options ─── */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.payment-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.payment-card input[type="radio"] {
+  display: none;
+}
+
+.payment-card:hover {
+  border-color: rgba(197, 160, 89, 0.5);
+  background: rgba(197, 160, 89, 0.04);
+}
+
+.payment-card.selected {
+  border-color: var(--primary);
+  background: rgba(197, 160, 89, 0.07);
+  box-shadow: 0 0 0 1px rgba(197, 160, 89, 0.25);
+}
+
+/* Mobile Money "featured" glow */
+.payment-card.featured {
+  border-color: rgba(197, 160, 89, 0.35);
+}
+
+.payment-card.featured.selected {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.2);
+}
+
+.pay-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.pay-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.pay-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pay-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #C5A059, #E8C87A);
+  color: #fff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+}
+
+.pay-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.pay-check {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  width: 1.2rem;
+  text-align: center;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.payment-card.selected .pay-check {
+  opacity: 1;
+}
+
+/* ─── Contextual Info Message ─── */
+.payment-info-msg {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0.75rem 1rem;
+  background: rgba(197, 160, 89, 0.05);
+  border: 1px dashed rgba(197, 160, 89, 0.25);
+  border-radius: 8px;
+  line-height: 1.6;
+  margin-top: -0.2rem;
+}
+
+/* ─── Cash Confirmed Screen ─── */
+.confirmed-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  min-height: 60%;
+  padding: 3rem 2rem;
+}
+
+.confirmed-icon {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.confirmed-wrapper h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.confirmed-wrapper p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.confirmed-note {
+  font-size: 0.85rem !important;
+  opacity: 0.75;
+}
