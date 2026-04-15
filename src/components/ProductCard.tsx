@@ -9,7 +9,7 @@ interface ProductCardProps {
   buttonText?: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = true, buttonText = "Commander" }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = false, buttonText = "Détails" }) => {
   const { addToCart, setSelectedProduct } = useCart();
 
   return (
@@ -17,10 +17,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = true, bu
       <div className="product-image">
         <img src={product.image} alt={product.name} />
         <div className="product-actions">
-          <button className="btn-small btn-secondary-light" onClick={() => setSelectedProduct(product)}>
-            Détails
-          </button>
-          <button className="btn-small btn-primary" onClick={() => addToCart(product)}>
+          <button className="btn-small btn-primary" onClick={() => setSelectedProduct(product)}>
             {buttonText}
           </button>
         </div>

@@ -87,7 +87,7 @@ const CarouselBand: React.FC<BandProps> = ({ items, direction, speed = 0.5, addT
             <div className="carousel-card-info">
               <span className="category">{product.category}</span>
               <h3>{product.name}</h3>
-              <p className="price">{product.price.toLocaleString()} F CFA</p>
+              {/* <p className="price">{product.price.toLocaleString()} F CFA</p> */}
             </div>
           </div>
         ))}

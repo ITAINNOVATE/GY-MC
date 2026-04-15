@@ -78,7 +78,7 @@ const PaymentSuccess: React.FC = () => {
             {orderDetails && (
               <div className="order-summary">
                 <p>Référence : <strong>{orderDetails.tx_ref}</strong></p>
-                <p>Montant : <strong>{orderDetails.amount.toLocaleString()} F CFA</strong></p>
+                {/* <p>Montant : <strong>{orderDetails.amount.toLocaleString()} F CFA</strong></p> */}
               </div>
             )}
             <p className="note">Un email de confirmation vous sera envoyé prochainement.</p>
