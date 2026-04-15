@@ -141,6 +141,21 @@
     font-size: 1.2rem;
   }
 
+  /* On mobile, all pages have dark hero — keep white text until scrolled */
+  .navbar.not-home:not(.scrolled) {
+    color: white;
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* When menu is open, ensure hamburger stays visible */
+  .navbar.menu-open .hamburger span {
+    background-color: white;
+  }
+
   .menu-toggle {
     display: block;
   }
