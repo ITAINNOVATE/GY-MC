@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 
-const managerImg = 'https://xncrrgxnyqgekmfhipen.supabase.co/storage/v1/object/public/products/c2/item2_30.jpg';
+const managerImg = 'https://eqqdjqdbbwmshllqesdt.supabase.co/storage/v1/object/public/products/c2/item2_30.jpg';
 
 const About: React.FC = () => {
   return (
