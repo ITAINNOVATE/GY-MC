@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
             pour sublimer votre allure.
           </p>
           <div className="hero-btns">
-            <a href="/shop" className="btn btn-primary">Explorer la Collection</a>
+            <a href="/collections" className="btn btn-primary">Explorer la Collection</a>
             <a href="/about" className="btn btn-secondary">À Propos de Nous</a>
           </div>
         </div>
