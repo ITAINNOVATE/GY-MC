@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
 
+const WHATSAPP_NUMBER = '2290166743493';
+
 const Contact: React.FC = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Build WhatsApp message text
+    const text = `📩 *Nouveau message depuis le site GY Maison Couture*\n\n👤 *Nom :* ${name}\n📧 *Email :* ${email}\n\n💬 *Message :*\n${message}`;
+
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
+    // Open WhatsApp in a new tab
+    window.open(waUrl, '_blank');
+
+    // Show confirmation
+    setSent(true);
+  };
+
+  const handleReset = () => {
+    setName('');
+    setEmail('');
+    setMessage('');
+    setSent(false);
+  };
+
   return (
     <main className="contact-page">
       <section className="contact-hero">
@@ -65,18 +94,52 @@ const Contact: React.FC = () => {
           <div className="contact-form-container">
             <span className="subtitle">Envoyez un message</span>
             <h2>Une demande particulière ?</h2>
-            <form className="contact-form">
-              <div className="form-group">
-                <input type="text" placeholder="Votre Nom Complet" required />
+
+            {!sent ? (
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    placeholder="Votre Nom Complet"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    placeholder="Votre E-mail"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <textarea
+                    placeholder="Votre Message"
+                    rows={6}
+                    value={message}
+                    onChange={e => setMessage(e.target.value)}
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary">Envoyer via WhatsApp</button>
+              </form>
+            ) : (
+              <div className="sent-confirmation">
+                <div className="sent-icon">✅</div>
+                <h3>Message prêt à envoyer !</h3>
+                <div className="sent-recap">
+                  <p><strong>Nom :</strong> {name}</p>
+                  <p><strong>Email :</strong> {email}</p>
+                  <p><strong>Message :</strong></p>
+                  <p className="recap-message">{message}</p>
+                </div>
+                <p className="sent-note">WhatsApp s'est ouvert avec votre message pré-rempli. Appuyez sur "Envoyer" dans WhatsApp pour finaliser.</p>
+                <button className="btn btn-secondary" onClick={handleReset}>Envoyer un autre message</button>
               </div>
-              <div className="form-group">
-                <input type="email" placeholder="Votre E-mail" required />
-              </div>
-              <div className="form-group">
-                <textarea placeholder="Votre Message" rows={6} required></textarea>
-              </div>
-              <button type="submit" className="btn btn-primary">Envoyer le message</button>
-            </form>
+            )}
           </div>
         </div>
       </section>
