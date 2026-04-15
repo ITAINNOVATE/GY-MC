@@ -141,19 +141,31 @@
     font-size: 1.2rem;
   }
 
-  /* On mobile, all pages have dark hero — keep white text until scrolled */
+  /* On mobile, all pages have dark hero — keep white until scrolled */
   .navbar.not-home:not(.scrolled) {
-    color: white;
-    background-color: transparent;
-    box-shadow: none;
-    border-bottom: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    color: white !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .navbar.not-home:not(.scrolled) .hamburger span {
+    background-color: white !important;
+  }
+
+  .navbar.not-home:not(.scrolled) .cart-trigger {
+    color: white !important;
+  }
+
+  .navbar.not-home:not(.scrolled) .logo {
+    color: white !important;
   }
 
   /* When menu is open, ensure hamburger stays visible */
   .navbar.menu-open .hamburger span {
-    background-color: white;
+    background-color: white !important;
   }
 
   .menu-toggle {
