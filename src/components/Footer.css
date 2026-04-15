@@ -61,6 +61,23 @@
   color: #666;
 }
 
+.credit {
+  margin-top: 0.6rem;
+  font-size: 0.7rem;
+  color: #555;
+  letter-spacing: 0.05em;
+}
+
+.credit a {
+  color: #777;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.credit a:hover {
+  color: var(--primary);
+}
+
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;

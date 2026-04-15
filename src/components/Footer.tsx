@@ -70,6 +70,7 @@ const Footer: React.FC = () => {
       <div className="footer-bottom">
         <div className="container">
           <p>&copy; {new Date().getFullYear()} GY Maison Couture. Tous droits réservés.</p>
+          <p className="credit">Réalisé par <a href="https://www.itainnovate.com" target="_blank" rel="noopener noreferrer">ITA INNOVATE</a></p>
         </div>
       </div>
     </footer>
