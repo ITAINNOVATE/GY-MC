@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import ProductCarousel from '../components/ProductCarousel';
 import { useProducts } from '../context/ProductContext';
-const essenceImg = 'https://eqqdjqdbbwmshllqesdt.supabase.co/storage/v1/object/public/products/c2/item2_25.jpg';
+const essenceImg = 'https://xncrrgxnyqgekmfhipen.supabase.co/storage/v1/object/public/products/c2/item2_25.jpg';
 import './Home.css';
 
 const Home: React.FC = () => {
