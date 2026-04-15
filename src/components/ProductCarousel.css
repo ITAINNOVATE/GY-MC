@@ -1,18 +1,22 @@
+/* ─── Carousel Viewport ─── */
 .carousel-viewport {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   overflow: hidden;
-  cursor: grab;
   position: relative;
 }
 
+/* Edge fade */
 .carousel-viewport::before,
 .carousel-viewport::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 80px;
-  z-index: 2;
+  width: 60px;
+  z-index: 5;
   pointer-events: none;
 }
 
@@ -26,15 +30,23 @@
   background: linear-gradient(to left, var(--background), transparent);
 }
 
+/* ─── Individual Band ─── */
+.carousel-band {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
 .carousel-track {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   will-change: transform;
 }
 
+/* ─── Card ─── */
 .carousel-card {
-  flex: 0 0 280px;
-  width: 280px;
+  flex: 0 0 260px;
+  width: 260px;
   background: white;
   transition: var(--transition-smooth);
 }
@@ -47,7 +59,7 @@
   position: relative;
   aspect-ratio: 3/4;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .carousel-card-image img {
@@ -61,12 +73,13 @@
   transform: scale(1.08);
 }
 
+/* ─── Hover Actions ─── */
 .carousel-card-actions {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.5rem;
+  padding: 1.2rem;
   background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
   transform: translateY(100%);
   transition: var(--transition-smooth);
@@ -79,23 +92,24 @@
   transform: translateY(0);
 }
 
+/* ─── Card Info ─── */
 .carousel-card-info {
   text-align: center;
-  padding: 0 0.5rem 1rem;
+  padding: 0 0.5rem 0.8rem;
 }
 
 .carousel-card-info .category {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
   display: block;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
 }
 
 .carousel-card-info h3 {
-  font-size: 0.85rem;
-  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -107,6 +121,23 @@
 .carousel-card-info .price {
   color: var(--primary);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-family: var(--font-heading);
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .carousel-viewport {
+    gap: 1.5rem;
+  }
+
+  .carousel-card {
+    flex: 0 0 200px;
+    width: 200px;
+  }
+
+  .carousel-viewport::before,
+  .carousel-viewport::after {
+    width: 30px;
+  }
 }

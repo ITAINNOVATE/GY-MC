@@ -23,7 +23,7 @@ const PageLoader = () => (
     alignItems: 'center', 
     justifyContent: 'center',
     background: '#FFFFFF',
-    color: '#C5A059',
+    color: '#D4AF37',
     fontSize: '1.2rem',
     fontWeight: '600',
     letterSpacing: '0.2em',

@@ -1,8 +1,8 @@
 /* Variable definition */
 :root {
-  --primary: hsl(40, 50%, 56%); /* Luxurious Gold */
-  --primary-light: hsl(40, 50%, 75%);
-  --primary-dark: hsl(40, 50%, 35%);
+  --primary: hsl(43, 74%, 49%); /* Bright Gold — high contrast */
+  --primary-light: hsl(43, 70%, 65%);
+  --primary-dark: hsl(40, 70%, 38%);
   --secondary: hsl(0, 0%, 10%); /* Deep Charcoal */
   --background: hsl(0, 0%, 100%);
   --surface: hsl(240, 10%, 98%);
@@ -10,7 +10,7 @@
   --text-muted: hsl(0, 0%, 45%);
   --border: hsl(0, 0%, 93%);
   --glass: rgba(255, 255, 255, 0.75);
-  --gold-gradient: linear-gradient(135deg, #C5A059 0%, #E8D5B5 50%, #A68545 100%);
+  --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F5D77A 50%, #B8962E 100%);
   
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;

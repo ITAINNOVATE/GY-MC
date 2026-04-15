@@ -7,8 +7,8 @@ import './Home.css';
 
 const Home: React.FC = () => {
   const { products, loading } = useProducts();
-  // Show up to 12 featured products in the carousel
-  const featuredProducts = products.slice(0, 12);
+  // Show up to 20 featured products across two carousel bands
+  const featuredProducts = products.slice(0, 20);
 
   if (loading) return null;
 

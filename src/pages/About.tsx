@@ -20,7 +20,7 @@ const About: React.FC = () => {
           </div>
           <div className="manager-content">
             <span className="subtitle">Mot de la Responsable</span>
-            <h2>Ghislaine Y.</h2>
+            <h2>Gina Loko</h2>
             <p className="quote">
               "La couture n'est pas seulement l'assemblage de tissus, c'est l'expression d'une âme et d'une culture."
             </p>

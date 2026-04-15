@@ -28,7 +28,7 @@ class ErrorBoundary extends Component<Props, State> {
         <div style={{ 
           padding: '50px', 
           textAlign: 'center', 
-          color: '#C5A059',
+          color: '#D4AF37',
           background: '#FFFFFF',
           minHeight: '100vh',
           display: 'flex',
@@ -56,7 +56,7 @@ class ErrorBoundary extends Component<Props, State> {
             style={{
               marginTop: '30px',
               padding: '10px 20px',
-              background: '#C5A059',
+              background: '#D4AF37',
               color: '#FFF',
               border: 'none',
               borderRadius: '4px',
