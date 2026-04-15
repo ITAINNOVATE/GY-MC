@@ -5,6 +5,7 @@ const WHATSAPP_NUMBER = '2290166743493';
 
 const Contact: React.FC = () => {
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [sent, setSent] = useState(false);
@@ -13,7 +14,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
 
     // Build WhatsApp message text
-    const text = `📩 *Nouveau message depuis le site GY Maison Couture*\n\n👤 *Nom :* ${name}\n📧 *Email :* ${email}\n\n💬 *Message :*\n${message}`;
+    const text = `📩 *Nouveau message depuis le site GY Maison Couture*\n\n👤 *Nom :* ${name}\n📞 *Tél :* ${phone}\n📧 *Email :* ${email}\n\n💬 *Message :*\n${message}`;
 
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
@@ -26,6 +27,7 @@ const Contact: React.FC = () => {
 
   const handleReset = () => {
     setName('');
+    setPhone('');
     setEmail('');
     setMessage('');
     setSent(false);
@@ -108,6 +110,15 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="form-group">
                   <input
+                    type="tel"
+                    placeholder="Numéro de Téléphone"
+                    value={phone}
+                    onChange={e => setPhone(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <input
                     type="email"
                     placeholder="Votre E-mail"
                     value={email}
@@ -132,6 +143,7 @@ const Contact: React.FC = () => {
                 <h3>Message prêt à envoyer !</h3>
                 <div className="sent-recap">
                   <p><strong>Nom :</strong> {name}</p>
+                  <p><strong>Tél :</strong> {phone}</p>
                   <p><strong>Email :</strong> {email}</p>
                   <p><strong>Message :</strong></p>
                   <p className="recap-message">{message}</p>
