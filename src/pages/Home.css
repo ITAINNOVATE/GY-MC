@@ -20,7 +20,7 @@
   border-radius: 4px; /* Minimalist radius */
   overflow: hidden;
   box-shadow: var(--shadow-soft);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
   background-color: var(--secondary);
 }
 
