@@ -21,7 +21,14 @@ const Home: React.FC = () => {
         <div className="container flash-sale-grid">
           <div className="flash-sale-video">
             <div className="video-wrapper">
-              <video autoPlay muted loop playsInline className="sale-video">
+              <video 
+                autoPlay 
+                loop 
+                playsInline 
+                controls 
+                preload="auto"
+                className="sale-video"
+              >
                 <source src={flashVideo} type="video/mp4" />
                 Votre navigateur ne supporte pas la lecture de vidéos.
               </video>
