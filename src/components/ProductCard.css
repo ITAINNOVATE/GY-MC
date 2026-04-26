@@ -22,22 +22,17 @@
   transform: scale(1.08);
 }
 
-.product-actions {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.2rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
-  transform: translateY(100%);
-  transition: var(--transition-smooth);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+.product-actions-static {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
-.product-card:hover .product-actions {
-  transform: translateY(0);
+.product-actions-static .btn-small {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.8rem 1rem;
+  font-size: 0.75rem;
 }
 
 .btn-small {

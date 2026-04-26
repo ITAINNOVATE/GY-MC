@@ -16,16 +16,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, showPrice = false, b
     <div className="product-card">
       <div className="product-image">
         <img src={product.image} alt={product.name} />
-        <div className="product-actions">
-          <button className="btn-small btn-primary" onClick={() => setSelectedProduct(product)}>
-            {buttonText}
-          </button>
-        </div>
       </div>
       <div className="product-info">
         <span className="category">{product.category}</span>
         <h3>{product.name}</h3>
         {showPrice && <p className="price">{product.price.toLocaleString()} F CFA</p>}
+        <div className="product-actions-static">
+          <button className="btn-small btn-primary" onClick={() => setSelectedProduct(product)}>
+            {buttonText}
+          </button>
+        </div>
       </div>
     </div>
   );
