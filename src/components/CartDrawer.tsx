@@ -166,7 +166,7 @@ const CartDrawer: React.FC = () => {
                     </div>
                     <div className="item-details">
                       <h3>{item.name}</h3>
-                      {/* <p className="item-price">{item.price.toLocaleString()} F CFA</p> */}
+                      <p className="item-price">{item.price.toLocaleString()} F CFA</p>
                       <div className="item-quantity">
                         <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
                         <span>{item.quantity}</span>
@@ -187,7 +187,7 @@ const CartDrawer: React.FC = () => {
               <div className="cart-footer">
                 <div className="total-row">
                   <span>Total</span>
-                  {/* <span className="total-price">{total.toLocaleString()} F CFA</span> */}
+                  <span className="total-price">{total.toLocaleString()} F CFA</span>
                 </div>
                 <button className="btn btn-primary checkout-btn" onClick={() => setStep('checkout')}>
                   Procéder au paiement
@@ -213,12 +213,12 @@ const CartDrawer: React.FC = () => {
                 {cart.map(item => (
                   <div key={item.id} className="summary-line">
                     <span>{item.name} × {item.quantity}</span>
-                    {/* <span>{(item.price * item.quantity).toLocaleString()} F CFA</span> */}
+                    <span>{(item.price * item.quantity).toLocaleString()} F CFA</span>
                   </div>
                 ))}
                 <div className="summary-total">
                   <span>Total</span>
-                  {/* <span>{total.toLocaleString()} F CFA</span> */}
+                  <span>{total.toLocaleString()} F CFA</span>
                 </div>
               </div>
 

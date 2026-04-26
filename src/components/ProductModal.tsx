@@ -3,7 +3,7 @@ import { useCart } from '../context/CartContext';
 import './ProductModal.css';
 
 const ProductModal: React.FC = () => {
-  const { selectedProduct, setSelectedProduct } = useCart();
+  const { selectedProduct, setSelectedProduct, addToCart } = useCart();
 
   if (!selectedProduct) return null;
 
@@ -29,14 +29,28 @@ const ProductModal: React.FC = () => {
               </p>
             </div>
 
+            <div className="modal-price">
+              {selectedProduct.price.toLocaleString()} F CFA
+            </div>
+
             <div className="modal-actions">
+              <button 
+                className="btn btn-primary btn-add-to-cart"
+                onClick={() => {
+                  addToCart(selectedProduct);
+                  setSelectedProduct(null);
+                }}
+              >
+                Ajouter au panier
+              </button>
+              
               <a 
                 href={`https://wa.me/2290166743493?text=Bonjour, je souhaite en savoir plus sur l'article : ${selectedProduct.name}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="btn btn-primary"
+                className="btn btn-secondary"
               >
-                Plus d'informations via WhatsApp
+                S'informer via WhatsApp
               </a>
             </div>
           </div>

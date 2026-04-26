@@ -35,7 +35,7 @@ const Shop: React.FC = () => {
         <div className="container">
           <div className="products-grid fade-in">
             {shopProducts.map(product => (
-              <ProductCard key={product.id} product={product} buttonText="Commander" />
+              <ProductCard key={product.id} product={product} showPrice={true} buttonText="Commander" />
             ))}
           </div>
 
