@@ -34,18 +34,31 @@
   margin-bottom: 1.5rem;
 }
 
-.quote {
-  font-size: 1.5rem;
-  font-family: var(--font-heading);
-  font-style: italic;
-  color: var(--primary);
-  margin-bottom: 2rem;
-  line-height: 1.3;
+.manifesto-text {
+  line-height: 1.8;
 }
 
-.manager-content p {
+.manifesto-text p {
   margin-bottom: 1.5rem;
   color: var(--text-muted);
+}
+
+.highlight {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary) !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.conclusion {
+  font-style: italic;
+  color: var(--secondary) !important;
+  font-weight: 500;
+  margin-top: 2rem;
 }
 
 .large-text {

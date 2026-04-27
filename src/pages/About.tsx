@@ -19,19 +19,44 @@ const About: React.FC = () => {
             <img src={managerImg} alt="La Responsable de GY Maison Couture" />
           </div>
           <div className="manager-content">
-            <span className="subtitle">Mot de la Responsable</span>
-            <h2>Gina Loko</h2>
-            <p className="quote">
-              "La couture n'est pas seulement l'assemblage de tissus, c'est l'expression d'une âme et d'une culture."
-            </p>
-            <p>
-              Bienvenue dans l'univers de GY Maison Couture. Ma passion pour la mode est née de la volonté de 
-              valoriser le savoir-faire africain tout en l'inscrivant dans la modernité internationale.
-            </p>
-            <p>
-              Chaque pièce qui sort de notre atelier est le fruit d'un travail méticuleux et d'une quête 
-              incessante de perfection. Nous travaillons pour que chaque femme se sente unique, puissante et élégante.
-            </p>
+            <span className="subtitle">L'Esprit de la Maison</span>
+            <h2>Gina Loko Djidjoho</h2>
+            <div className="manifesto-text">
+              <p className="highlight">GY MAISON COUTURE — Boudoir intimiste</p>
+              <p>
+                Je suis Gina Loko Djidjoho. Gy pour ceux qui savent.<br />
+                Gy Maison Couture est née d’une envie.<br />
+                Envie de faire vivre des étoffes.<br />
+                Envie de créer pour les autres.
+              </p>
+              <p>
+                Pendant longtemps, j’ai créé pour moi. Parce que m’habiller est un instinct. 
+                Une seconde peau. Puis un jour, j’ai ouvert la porte. Gy est devenue une évidence.
+              </p>
+              <p>
+                Ma première obsession n’est pas la coupe. C’est la matière. 
+                Je cherche les étoffes comme d’autres cherchent l’or. 
+                Dans les marchés de Dubaï, les ruelles de Paris, les échoppes d’Istanbul, 
+                d’Abidjan, de Cotonou, de Dakar, jusqu’à Bali. 
+                Je touche. Je ressens. Je choisis. Et je reviens avec des valises pleines de possibles.
+              </p>
+              <p>
+                En 2016, je crée mon atelier à Abidjan. Un lieu fermé. Un lieu choisi. Un boudoir. 
+                Ici, on ne produit pas. On révèle. Chaque pièce est unique. Ou presque. Une, deux, jamais plus.
+              </p>
+              <p>
+                Gy Maison Couture ne se montre pas partout. Elle se découvre. Des ventes privées. 
+                Des femmes qui savent. Un premier défilé en 2019, au Pullman. Puis le silence à nouveau. 
+                Parce que Gy n’est pas une mode. C’est une présence.
+              </p>
+              <p>
+                Mes signatures sont des essentiels réinventés : un kaftan plissé qui traverse les moments, 
+                un jogging habité de wax, entre rue et identité.
+              </p>
+              <p className="conclusion">
+                Gy Maison Couture, c’est une mode intime, libre et profondément incarnée.
+              </p>
+            </div>
           </div>
         </div>
       </section>
