@@ -17,7 +17,7 @@
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 5rem;
-  align-items: center;
+  align-items: start;
 }
 
 .manager-image img {
@@ -36,29 +36,45 @@
 
 .manifesto-text {
   line-height: 1.8;
+  font-size: 0.95rem;
+  max-width: 650px;
 }
 
-.manifesto-text p {
-  margin-bottom: 1.5rem;
+.manifesto-story {
+  margin-bottom: 2rem;
+}
+
+.manifesto-story p {
+  margin-bottom: 0.5rem;
   color: var(--text-muted);
+}
+
+.indent {
+  padding-left: 1.5rem;
+  font-style: italic;
+  opacity: 0.9;
 }
 
 .highlight {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--primary) !important;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   border-bottom: 1px solid var(--border);
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.8rem;
+  margin-bottom: 2.5rem !important;
 }
 
 .conclusion {
   font-style: italic;
   color: var(--secondary) !important;
   font-weight: 500;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  font-size: 1.1rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
 }
 
 .large-text {

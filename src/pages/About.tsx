@@ -23,36 +23,36 @@ const About: React.FC = () => {
             <h2>Gina Loko Djidjoho</h2>
             <div className="manifesto-text">
               <p className="highlight">GY MAISON COUTURE — Boudoir intimiste</p>
-              <p>
-                Je suis Gina Loko Djidjoho. Gy pour ceux qui savent.<br />
-                Gy Maison Couture est née d’une envie.<br />
-                Envie de faire vivre des étoffes.<br />
-                Envie de créer pour les autres.
-              </p>
-              <p>
-                Pendant longtemps, j’ai créé pour moi. Parce que m’habiller est un instinct. 
-                Une seconde peau. Puis un jour, j’ai ouvert la porte. Gy est devenue une évidence.
-              </p>
-              <p>
-                Ma première obsession n’est pas la coupe. C’est la matière. 
-                Je cherche les étoffes comme d’autres cherchent l’or. 
-                Dans les marchés de Dubaï, les ruelles de Paris, les échoppes d’Istanbul, 
-                d’Abidjan, de Cotonou, de Dakar, jusqu’à Bali. 
-                Je touche. Je ressens. Je choisis. Et je reviens avec des valises pleines de possibles.
-              </p>
-              <p>
-                En 2016, je crée mon atelier à Abidjan. Un lieu fermé. Un lieu choisi. Un boudoir. 
-                Ici, on ne produit pas. On révèle. Chaque pièce est unique. Ou presque. Une, deux, jamais plus.
-              </p>
-              <p>
-                Gy Maison Couture ne se montre pas partout. Elle se découvre. Des ventes privées. 
-                Des femmes qui savent. Un premier défilé en 2019, au Pullman. Puis le silence à nouveau. 
-                Parce que Gy n’est pas une mode. C’est une présence.
-              </p>
-              <p>
-                Mes signatures sont des essentiels réinventés : un kaftan plissé qui traverse les moments, 
-                un jogging habité de wax, entre rue et identité.
-              </p>
+              
+              <div className="manifesto-story">
+                <p>Je suis Gina Loko Djidjoho. Gy pour ceux qui savent.</p>
+                <p>Gy Maison Couture est née d’une envie.</p>
+                <p className="indent">Envie de faire vivre des étoffes</p>
+                <p className="indent">Envie de créer pour les autres.</p>
+              </div>
+
+              <div className="manifesto-story">
+                <p>Pendant longtemps, j’ai créé pour moi. Parce que m’habiller est un instinct. Une seconde peau. Puis un jour, j’ai ouvert la porte. Gy est devenue une évidence.</p>
+              </div>
+
+              <div className="manifesto-story">
+                <p>Ma première obsession n’est pas la coupe. C’est la matière. Je cherche les étoffes comme d’autres cherchent l’or.</p>
+                <p>Dans les marchés de Dubaï, les ruelles de Paris, les échoppes d’Istanbul, d’Abidjan, de Cotonou, de Dakar, jusqu’à Bali. Je touche. Je ressens. Je choisis. Et je reviens avec des valises pleines de possibles.</p>
+              </div>
+
+              <div className="manifesto-story">
+                <p>En 2016, je crée mon atelier à Abidjan. Un lieu fermé. Un lieu choisi. Un boudoir. Ici, on ne produit pas. On révèle.</p>
+                <p>Chaque pièce est unique. Ou presque. Une, deux, jamais plus.</p>
+              </div>
+
+              <div className="manifesto-story">
+                <p>Gy Maison Couture ne se montre pas partout. Elle se découvre. Des ventes privées. Des femmes qui savent. Un premier défilé en 2019, au Pullman. Puis le silence à nouveau. Parce que Gy n’est pas une mode. C’est une présence.</p>
+              </div>
+
+              <div className="manifesto-story">
+                <p>Mes signatures sont des essentiels réinventés : un kaftan plissé qui traverse les moments, un jogging habité de wax, entre rue et identité.</p>
+              </div>
+
               <p className="conclusion">
                 Gy Maison Couture, c’est une mode intime, libre et profondément incarnée.
               </p>
