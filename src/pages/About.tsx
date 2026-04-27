@@ -50,7 +50,7 @@ const About: React.FC = () => {
               </div>
 
               <div className="manifesto-story">
-                <p>Mes signatures sont des essentiels réinventés : un kaftan plissé qui traverse les moments, un jogging habité de wax, entre rue et identité.</p>
+                <p>Mes signatures sont des essentiels réinventés : un kaftan plissé qui traverse les moments, un jogging drapé de WAX, entre décontraction et identité.</p>
               </div>
 
               <p className="conclusion">
