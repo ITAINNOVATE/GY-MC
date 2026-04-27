@@ -46,7 +46,7 @@ const About: React.FC = () => {
               </div>
 
               <div className="manifesto-story">
-                <p>Gy Maison Couture ne se montre pas partout. Elle se découvre. Des ventes privées. Des femmes qui savent. Un premier défilé en 2019, au Pullman. Puis le silence à nouveau. Parce que Gy n’est pas une mode. C’est une présence.</p>
+                <p>Gy Maison Couture ne se montre pas partout. Elle se découvre. Un premier défilé en 2019 au Pullman Abidjan, puis des ventes privées... Parce que Gy n’est pas une mode. C’est une présence.</p>
               </div>
 
               <div className="manifesto-story">
