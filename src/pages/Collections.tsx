@@ -5,7 +5,7 @@ import './Collections.css';
 
 const Collections: React.FC = () => {
   const { products, loading, error } = useProducts();
-  const [activeCollection, setActiveCollection] = useState('Deuxième Collection');
+  const [activeCollection, setActiveCollection] = useState('Toutes');
   const collections = ['Toutes', 'Première Collection', 'Deuxième Collection'];
 
   const filteredProducts = activeCollection === 'Toutes' 
